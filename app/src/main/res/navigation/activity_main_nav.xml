@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_nav"
+    app:startDestination="@id/homePageFragment">
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.whatsappui.ui.homepage.HomePageFragment"
+        android:label="HomePageFragment"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePageFragment_to_inboxFragment"
+            app:destination="@id/inboxFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.whatsappui.ui.profilepage.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/inboxFragment"
+        tools:layout="@layout/fragment_inbox"
+        android:name="com.example.whatsappui.ui.homepage.chats.inboxpage.InboxFragment"
+        android:label="InboxFragment" >
+        <argument
+            android:name="contactsModel"
+            app:argType="com.example.whatsappui.data.model.homepage.ContactsModel"
+            app:nullable="true" />
+    </fragment>
+</navigation>
