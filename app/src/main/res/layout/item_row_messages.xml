@@ -28,7 +28,7 @@
                 android:layout_height="@dimen/_60sdp"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:padding="@dimen/_3sdp"
-                android:src="@drawable/ellipse"
+                app:imageResource="@{model.profilePath}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -52,18 +52,39 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_22sdp"
-                android:text="okay sure!!"
+                android:text="@string/okay_sure"
                 app:layout_constraintStart_toEndOf="@+id/profile_photo"
                 app:layout_constraintTop_toTopOf="@+id/contactName" />
 
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/date"
+                style="@style/ContactMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:text="@string/_12_25_pm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/contactName" />
+
+            <ImageView
+                android:id="@+id/tick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:src="@drawable/tick"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date" />
+
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/longline"
+                android:scaleType="centerCrop"
+                android:src="@drawable/line3"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintEnd_toEndOf="@+id/tick"
+                app:layout_constraintStart_toStartOf="@+id/profile_photo" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

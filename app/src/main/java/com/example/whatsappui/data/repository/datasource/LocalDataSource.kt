@@ -17,6 +17,4 @@ interface LocalDataSource {
     suspend fun insertMessageToInbox(messagesModel: MessagesModel)
 
     fun getMessagesByPersonId(personID: Int): LiveData<List<MessagesModel>>
-
-    fun getLastMessageByPersonId(personID: Int): LiveData<List<MessagesModel>>
 }

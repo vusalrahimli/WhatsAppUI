@@ -23,7 +23,4 @@ class LocalDataSourceImpl(private val contactsDao: ContactsDao) : LocalDataSourc
 
     override fun getMessagesByPersonId(personID: Int): LiveData<List<MessagesModel>> =
         contactsDao.getMessagesByPersonId(personID)
-
-    override fun getLastMessageByPersonId(personID: Int): LiveData<List<MessagesModel>> =
-        contactsDao.getLastMessageByPersonId(personID)
 }

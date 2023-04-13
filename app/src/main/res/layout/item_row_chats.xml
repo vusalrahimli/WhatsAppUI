@@ -12,6 +12,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="@dimen/_60sdp"
         android:layout_height="@dimen/_84sdp"
+        android:layout_margin="@dimen/_6sdp"
         app:cardBackgroundColor="@color/black"
         app:cardElevation="0dp">
 
@@ -36,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_60sdp"
                 android:padding="@dimen/_4sdp"
-                android:src="@drawable/ellipse"
+                app:imageResource="@{model.profilePath}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "589c60d14e77a4b3a21b32e841d117b8",
+    "identityHash": "108a130668ff9cc6750f5e0758b0a3ad",
     "entities": [
       {
         "tableName": "contacts",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `surname` TEXT, `profilePath` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `surname` TEXT, `profilePath` INTEGER)",
         "fields": [
           {
             "fieldPath": "id",
@@ -29,7 +29,7 @@
           {
             "fieldPath": "profilePath",
             "columnName": "profilePath",
-            "affinity": "TEXT",
+            "affinity": "INTEGER",
             "notNull": false
           }
         ],
@@ -84,7 +84,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '589c60d14e77a4b3a21b32e841d117b8')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '108a130668ff9cc6750f5e0758b0a3ad')"
     ]
   }
 }

@@ -31,7 +31,11 @@ class InboxFragment : Fragment() {
 
     private val viewModel: InboxVM by viewModel()
 
-    private var message: String? = null
+    private var dateAndTime: Date? = null
+
+    private var timeFormat: SimpleDateFormat? = null
+
+    private var time: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,6 +53,7 @@ class InboxFragment : Fragment() {
 
     private fun subscribeToObservables() {
         contactModel = args.contactsModel
+        binding.inboxToolbar.title = contactModel?.name
         viewModel.getMessagesByPersonId(contactModel!!.id).observe(viewLifecycleOwner) {
             adapterInbox.submitList(it)
         }
@@ -86,9 +91,9 @@ class InboxFragment : Fragment() {
     }
 
     private fun createMessagesModel(message: String): MessagesModel {
-        val dateAndTime = Calendar.getInstance().time
-        val timeFormat = SimpleDateFormat("hh:mm a", Locale.getDefault())
-        val time = timeFormat.format(dateAndTime)
+        dateAndTime = Calendar.getInstance().time
+        timeFormat = SimpleDateFormat("hh:mm a", Locale.getDefault())
+        time = dateAndTime?.let { timeFormat!!.format(it) }
 
         return MessagesModel(
             0,

@@ -28,7 +28,4 @@ class ChatsVM(
             localDataSource.updateContact(contactsModel)
         }
     }
-
-    fun getLastMessagesByPersonId(personId: Int): LiveData<List<MessagesModel>> =
-        localDataSource.getMessagesByPersonId(personId)
 }

@@ -16,7 +16,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_16sdp"
             android:orientation="horizontal"
-            app:equalSpacing="@{14}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_row_chats" />
 
@@ -56,7 +55,6 @@
                     tools:listitem="@layout/item_row_messages" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
         </FrameLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

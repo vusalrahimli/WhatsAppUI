@@ -10,7 +10,7 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/inboxToolbar"
-            style="@style/toolbarStyle"
+            style="@style/inboxToolbarStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@color/background"
@@ -19,13 +19,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:menu="@menu/inbox_menu"
             app:navigationIcon="@drawable/arrow"
-            app:title="Name" />
+            app:subtitle="@string/online" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvInbox"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:equalSpacing="@{10}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/cons"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,28 +36,22 @@
             android:id="@+id/cons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_margin="@dimen/_10sdp"
             android:background="@drawable/inbox_background"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvInbox">
 
-            <ImageView
-                android:id="@+id/black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/_5sdp"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:src="@drawable/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/plus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/PlusButtonStyle"
+                android:layout_width="@dimen/_33sdp"
+                android:layout_height="@dimen/_33sdp"
                 android:layout_marginVertical="@dimen/_5sdp"
                 android:layout_marginStart="@dimen/_5sdp"
+                android:background="@drawable/black"
+                android:padding="1dp"
                 android:src="@drawable/plus"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -66,12 +59,12 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextTypeMsg"
+                style="@style/EditTextStyle"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginHorizontal="@dimen/_10sdp"
-                android:ems="10"
-                android:hint="@string/type_message_hint"
-                android:inputType="textPersonName"
+                android:background="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/line"
                 app:layout_constraintStart_toEndOf="@+id/plus"
                 app:layout_constraintTop_toTopOf="@+id/cons" />

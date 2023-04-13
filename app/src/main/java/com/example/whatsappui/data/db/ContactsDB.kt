@@ -12,7 +12,10 @@ import com.example.whatsappui.data.model.messagespage.MessagesModel
         ContactsModel::class,
         MessagesModel::class,
     ],
-    version = 1,
+    version = 2,
+    autoMigrations = [
+        AutoMigration(from = 1, to = 2),
+    ],
     exportSchema = true,
 )
 @TypeConverters

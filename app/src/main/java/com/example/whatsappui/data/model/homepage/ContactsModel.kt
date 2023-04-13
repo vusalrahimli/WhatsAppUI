@@ -12,7 +12,5 @@ data class ContactsModel(
     val id: Int,
     val name: String? = null,
     val surname: String? = null,
-    val profilePath: String? = null,
-    val lastMsg: String? = null,
-    val dateLastMsg: String? = null,
+    val profilePath: Int? = null,
 ) : Parcelable

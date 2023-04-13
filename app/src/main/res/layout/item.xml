@@ -17,7 +17,6 @@
             android:id="@+id/cardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_8sdp"
             app:cardBackgroundColor="@color/inbox"
             app:cardCornerRadius="@dimen/_20ssp"
             app:cardElevation="0dp"
@@ -27,7 +26,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/_8sdp">
+                android:padding="@dimen/_10sdp">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/msgText"
@@ -35,11 +34,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:fontFamily="@font/inter"
-                    android:maxWidth="@dimen/_200sdp"
                     android:text="@{model.message}"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_12ssp"
                     app:layout_constraintEnd_toStartOf="@+id/msgDate"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -48,9 +43,7 @@
                     android:id="@+id/msgDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/inter"
                     android:text="@{model.dateMessage}"
-                    android:textSize="@dimen/_10ssp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
 

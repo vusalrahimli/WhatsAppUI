@@ -22,9 +22,6 @@ interface ContactsDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertMessageToInbox(messagesModel: MessagesModel)
 
-    @Query("SELECT * FROM messages WHERE personId=:personID ORDER BY dateMessage")
+    @Query("SELECT * FROM messages WHERE personId=:personID")
     fun getMessagesByPersonId(personID: Int): LiveData<List<MessagesModel>>
-
-    @Query("SELECT * FROM messages ORDER BY dateMessage DESC LIMIT 1")
-    fun getLastMessageByPersonId(personID: Int): LiveData<List<MessagesModel>>
 }
