@@ -2,7 +2,7 @@
 
 ## Download APK
 
-You can download apk [on release pagehttps://github.com/vusalrahimli/WhatsAppUI/tree/master/apk)
+You can download apk [on release page](https://github.com/vusalrahimli/WhatsAppUI/tree/master/apk)
 
 ## Introduction
 This is a Whatsapp User Interface android app that updates the message list when you type a message in the text field.
